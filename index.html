@@ -4,94 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube Playlist Creator</title>
-    <style>
-        /* Full-page background */
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background: url('https://imgur.com/a/CSzNpfg') no-repeat center center fixed;
-            background-size: cover; /* Stretch image */
-        }
-
-        /* Dark overlay to improve text readability */
-        .overlay {
-            background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Main content */
-        .container {
-            position: relative;
-            z-index: 2;
-            color: white; /* Text color */
-            padding-top: 100px;
-        }
-
-        /* Search bar styling */
-        input {
-            padding: 10px;
-            width: 300px;
-            margin: 10px;
-            border: 1px solid #fff;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 5px;
-        }
-
-        button {
-            padding: 10px 20px;
-            cursor: pointer;
-            border: none;
-            background: red;
-            color: white;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-
-        /* Scrolling text */
-        .scroll-text {
-            width: 100%;
-            white-space: nowrap;
-            overflow: hidden;
-            box-sizing: border-box;
-            margin-top: 20px;
-        }
-
-        .scroll-text span {
-            display: inline-block;
-            padding-left: 100%;
-            animation: scroll 10s linear infinite;
-        }
-
-        @keyframes scroll {
-            from { transform: translateX(0); }
-            to { transform: translateX(-100%); }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Dark overlay for better text readability -->
-    <div class="overlay"></div>
-
-    <div class="container">
-        <h2>YouTube Playlist Creator</h2>
-
-        <div class="scroll-text">
-            <span>Generate ranked YouTube playlists from Beginner to Advanced levels! 🎥✨</span>
-        </div>
-
-        <p>Enter a topic, and our AI-powered system will create a structured YouTube learning path for you.</p>
-
-        <input type="text" id="topic" placeholder="Enter topic...">
-        <button onclick="sendToMake()">Generate Playlist</button>
+    <h2>YouTube Playlist Creator</h2>
+    <img src="https://imgur.com/a/CSzNpfg" alt="YouTube Playlist Creator" class="banner">
+    
+    <div class="scroll-text">
+        <span>Generate ranked YouTube playlists from Beginner to Advanced levels! 🎥✨</span>
     </div>
-
+    
+    <p>Enter a topic, and our AI-powered system will create a structured YouTube learning path for you.</p>
+    
+    <input type="text" id="topic" placeholder="Enter topic...">
+    <button onclick="sendToMake()">Generate Playlist</button>
+    
     <script>
         function sendToMake() {
             const topic = document.getElementById("topic").value;
@@ -99,9 +26,9 @@
                 alert("Please enter a topic.");
                 return;
             }
-
+            
             const webhookUrl = "YOUR_MAKE_WEBHOOK_URL_HERE"; // Replace with actual URL
-
+            
             fetch(webhookUrl, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -112,6 +39,5 @@
             .catch(error => alert("Error sending request."));
         }
     </script>
-
 </body>
 </html>
