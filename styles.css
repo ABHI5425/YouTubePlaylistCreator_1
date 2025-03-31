@@ -1,32 +1,42 @@
-body { 
-    font-family: Arial, sans-serif; 
-    text-align: center; 
-    margin-top: 50px; 
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
-input { 
-    padding: 10px; 
-    width: 300px; 
-    margin: 10px; 
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
-button { 
-    padding: 10px 20px; 
-    cursor: pointer; 
+h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
 }
 
-.banner { 
-    width: 100%; 
-    max-width: 600px; 
-    margin: 0 auto; 
-    display: block; 
+.banner {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px;
 }
 
 .scroll-text {
     width: 100%;
-    white-space: nowrap;
     overflow: hidden;
-    box-sizing: border-box;
+    white-space: nowrap;
+    background: #222;
+    color: white;
+    padding: 10px 0;
+    margin-bottom: 15px;
 }
 
 .scroll-text span {
@@ -38,4 +48,35 @@ button {
 @keyframes scroll {
     from { transform: translateX(0); }
     to { transform: translateX(-100%); }
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.input-section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
 }
