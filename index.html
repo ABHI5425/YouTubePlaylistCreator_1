@@ -7,23 +7,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>YouTube Playlist Creator</h1>
-
-        <img src="https://imgur.com/a/CSzNpfg" alt="YouTube Playlist Creator" class="banner">
-
-        <div class="scroll-text">
-            <span>Generate ranked YouTube playlists from Beginner to Advanced levels! 🎥✨</span>
-        </div>
-
-        <p>Enter a topic, and our AI-powered system will create a structured YouTube learning path for you.</p>
-
-        <div class="input-section">
-            <input type="text" id="topic" placeholder="Enter topic...">
-            <button onclick="sendToMake()">Generate Playlist</button>
-        </div>
+    <h2>YouTube Playlist Creator</h2>
+    <img src="YOUR_IMAGE_URL_HERE" alt="YouTube Playlist Creator" class="banner">
+    
+    <div class="scroll-text">
+        <span>Generate ranked YouTube playlists from Beginner to Advanced levels! 🎥✨</span>
     </div>
-
+    
+    <p>Enter a topic, and our AI-powered system will create a structured YouTube learning path for you.</p>
+    
+    <input type="text" id="topic" placeholder="Enter topic...">
+    <button onclick="sendToMake()">Generate Playlist</button>
+    
     <script>
         function sendToMake() {
             const topic = document.getElementById("topic").value;
@@ -31,9 +26,9 @@
                 alert("Please enter a topic.");
                 return;
             }
-
+            
             const webhookUrl = "YOUR_MAKE_WEBHOOK_URL_HERE"; // Replace with actual URL
-
+            
             fetch(webhookUrl, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
